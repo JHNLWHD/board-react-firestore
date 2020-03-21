@@ -23,14 +23,14 @@ class Show extends Component {
 					boards: doc.data(),
 					key: doc.id,
 					isLoading: false
-                });
+				});
 			} else {
 				console.log('No such document.');
 			}
 		});
 	}
 
-	delete(id) {
+	delete = id => {
 		firebase
 			.firestore()
 			.collection('boards')
@@ -43,7 +43,7 @@ class Show extends Component {
 			.catch(error => {
 				console.log(`Error removing document: ${error}`);
 			});
-	}
+	};
 
 	render() {
 		return (
@@ -67,7 +67,7 @@ class Show extends Component {
 						</Link>
 						&nbsp;
 						<button
-							onClick={this.delete.bind(this, this.state.key)}
+							onClick={() => this.delete(this.state.key)}
 							className='btn btn-danger'
 						>
 							Delete
