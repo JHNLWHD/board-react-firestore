@@ -45,24 +45,26 @@ class App extends Component {
 						<h4>
 							<Link to='/create'>Add Board</Link>
 						</h4>
-            <table className="table table-stripe">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>Author</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.boards.map(board => 
-                  <tr key={board.key}>
-                    <td><Link to={`/show/${board.key}`}>{board.title}</Link></td>
-                    <td>{board.description}</td>
-                    <td>{board.author}</td>
-                  </tr>  
-                )}
-              </tbody>
-            </table>
+						<table className='table table-stripe'>
+							<thead>
+								<tr>
+									<th>Title</th>
+									<th>Description</th>
+									<th>Author</th>
+								</tr>
+							</thead>
+							<tbody>
+								{this.state.boards.map(board => (
+									<tr key={board.key}>
+										<td>
+											<Link to={`/show/${board.key}`}>{board.title}</Link>
+										</td>
+										<td>{board.description}</td>
+										<td>{board.author}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
